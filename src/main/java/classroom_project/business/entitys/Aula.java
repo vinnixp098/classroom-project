@@ -1,6 +1,7 @@
 package classroom_project.business.entitys;
 
 import classroom_project.business.DTOs.DadosCadastroAula;
+import classroom_project.business.DTOs.DadosEdicaoAula;
 import classroom_project.business.enums.Andar;
 import classroom_project.business.enums.Bloco;
 import classroom_project.business.enums.Dia;
@@ -45,18 +46,27 @@ public class Aula {
         this.horario = dados.horario();
     }
 
-    public void atualizarDados(@Valid DadosEdicaoMedico dados) {
-        if(dados.nome() != null){
-            this.nome = dados.nome();
+    public void atualizarAula(@Valid DadosEdicaoAula aula) {
+        //  Vou editar apenas dia, andar, bloco, sala e horario
+        if(aula.dia() != null){
+            this.dia = aula.dia();
         }
 
-        if(dados.telefone() != null){
-            this.telefone = dados.telefone();
+        if(aula.andar() != null){
+            this.andar = aula.andar();
         }
 
-        if(dados.endereco() != null){
-            this.endereco.atualizarInformacoes(dados.endereco());
+        if(aula.bloco() != null){
+            this.bloco = aula.bloco();
         }
+
+        if(aula.sala() != null){
+            this.sala = aula.sala();
+        }
+
+        if(aula.horario() != null){
+            this.horario = aula.horario();
+        }
+
     }
-
 }
