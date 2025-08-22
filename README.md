@@ -10,7 +10,6 @@ Este projeto tem como finalidade organizar as salas de modo que seja possível r
 - 🌱 **Spring Boot 3.5**
 - 📦 **Maven**
 - 🗃️ **Spring Data JPA**
-- 💾 **H2 Database (em memória)**
 - 🔧 **Spring Web**
 - ✍️ **Lombok**
 
