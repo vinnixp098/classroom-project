@@ -6,7 +6,7 @@ Este projeto tem como finalidade organizar as salas de modo que seja possível r
 
 ## 🚀 Tecnologias Utilizadas
 
-- ☕ **Java 24**
+- ☕ **Java 17**
 - 🌱 **Spring Boot 3.5**
 - 📦 **Maven**
 - 🗃️ **Spring Data JPA**
