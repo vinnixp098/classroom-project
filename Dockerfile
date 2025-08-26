@@ -1,16 +1,24 @@
-FROM ubuntu:latest As build
+# Stage 1: Build
+FROM maven:3.9.3-eclipse-temurin-17 AS build
 
-RUN apt-get update
-RUN apt-get install openjdk-17-jdk -y
-COPY . .
+WORKDIR /app
 
-RUN apt-get install maven -y
-RUN mvn clean install
+# Copia arquivos de código
+COPY pom.xml .
+COPY src ./src
 
+# Builda o projeto
+RUN mvn clean package -DskipTests
+
+# Stage 2: Runtime
 FROM openjdk:17-jdk-slim
+
+WORKDIR /app
 
 EXPOSE 8080
 
-COPY --from=build /target/classroom-project-0.0.1-SNAPSHOT.jar. app.jar
+# Copia o JAR gerado no stage de build
+COPY --from=build /app/target/classroom-project-0.0.1-SNAPSHOT.jar app.jar
 
-ENTRYPOINT ["java" , "-jar" , "app.jar"]
+# Comando para rodar o app
+ENTRYPOINT ["java", "-jar", "app.jar"]
