@@ -59,33 +59,29 @@ public class Aula {
     public Aula(DadosCadastroAula dados) {
         this.sala = dados.sala();
         this.curso = dados.curso();
+        this.dia = dados.dia();
+        this.turno = dados.turno();
         this.horario = dados.horario();
         this.professor = dados.professor();
         this.disciplina = dados.disciplina();
         this.horario = dados.horario();
     }
 
-    public void atualizarAula(@Valid DadosEdicaoAula aula) {
-        //  Vou editar apenas dia, andar, bloco, sala e horario
-        if(aula.dia() != null){
-            this.dia = aula.dia();
-        }
+    // SETTERS
+    public void setDia(Dia dia) {
+        this.dia = dia;
+    }
 
-        if(aula.andar() != null){
-            this.andar = aula.andar();
-        }
+    public void setTurno(Turno turno) {
+        this.turno = turno;
+    }
 
-        if(aula.bloco() != null){
-            this.bloco = aula.bloco();
-        }
 
-        if(aula.sala() != null){
-            this.sala = aula.sala();
-        }
+    public void setHorario(String horario) {
+        this.horario = horario;
+    }
 
-        if(aula.horario() != null){
-            this.horario = aula.horario();
-        }
-
+    public void setSala(String sala) {
+        this.sala = sala;
     }
 }

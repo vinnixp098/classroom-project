@@ -11,7 +11,7 @@
     <groupId>com.vinicius</groupId>
     <artifactId>classroom-project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>clinical-med-crud</name>
+    <name>classroom-project</name>
     <description>Demo project for Spring Boot</description>
     <url/>
     <licenses>
